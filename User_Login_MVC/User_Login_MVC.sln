@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31729.503
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "User_Login_MVC", "User_Login_MVC\User_Login_MVC.csproj", "{F86170DD-732A-4B9A-84A4-E36015B43A9A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F1563032-F86E-40B9-9ECF-8B9CD468A4D6} = {F1563032-F86E-40B9-9ECF-8B9CD468A4D6}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API_Rest_DB_Persona_Manager", "..\API_Rest_DB_Persona_Manager\API_Rest_DB_Persona_Manager\API_Rest_DB_Persona_Manager.csproj", "{F1563032-F86E-40B9-9ECF-8B9CD468A4D6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F86170DD-732A-4B9A-84A4-E36015B43A9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F86170DD-732A-4B9A-84A4-E36015B43A9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F86170DD-732A-4B9A-84A4-E36015B43A9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F86170DD-732A-4B9A-84A4-E36015B43A9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1563032-F86E-40B9-9ECF-8B9CD468A4D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1563032-F86E-40B9-9ECF-8B9CD468A4D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1563032-F86E-40B9-9ECF-8B9CD468A4D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1563032-F86E-40B9-9ECF-8B9CD468A4D6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D92AA165-976B-4C33-B285-90B882965FAC}
+	EndGlobalSection
+EndGlobal

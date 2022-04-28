@@ -1,0 +1,132 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @*<title>@ViewBag.Title - My ASP.NET Application</title>*@
+    <link href="~/Estilos/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Estilos/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Estilos/bootstrap.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <script type="text/javascript" src='https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.3.min.js'></script>
+    <script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/js/bootstrap.min.js'></script>
+    <link rel="stylesheet" href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/css/bootstrap.min.css' media="screen" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide|Sofia|Trirong"> @*Fuentes de texto de Google*@
+
+    <style type="text/css">
+        body {
+            font-family: "Lato", sans-serif;
+            background-color: rgba(46, 64, 83, 1);
+            transition: background-image 2s;
+        }
+
+        .sidenav { /*menú lateral*/
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: rgba(39, 55, 70, 0.8);
+            overflow-x: hidden;
+            transition: .5s;
+            padding-top: 95px;
+        }
+
+            .sidenav a { /*texto menú lateral*/
+                padding: 8px 8px 8px 32px;
+                text-decoration: none;
+                font-size: 20px;
+                color: white;
+                display: block;
+                transition: 0.3s;
+            }
+
+                .sidenav a:hover { /*texto al pasar el puntero por el texto del menú lateral*/
+                    color: rgba(171, 178, 185, 1);
+                }
+
+            .sidenav .closebtn {
+                position: absolute;
+                top: 0;
+                right: 25px;
+                font-size: 36px;
+                margin-left: 50px;
+            }
+
+        #about {
+            transition: margin-left 1s;
+            padding: 16px;
+            color: white;
+        }
+
+        #encabezado1 {
+            width: 100% !important;
+            background-color: rgba(255, 255, 255, 1);
+        }
+
+        #encabezado2 {
+            text-align: right;
+            vertical-align: bottom;
+            /*font-weight: bold;
+            /*Fuentes de texto de Google*/
+            /*font-family: "Sofia", sans-serif;
+            font-family: "Trirong", serif;*/
+            font-family: "Audiowide", sans-serif;
+            color: #566573;
+        }
+
+        #encabezado3 {
+            text-align: left;
+            color: #566573;
+        }
+    </style>
+</head>
+<body>
+    <div id="encabezado1">
+        <div id="encabezado2">
+            Bienvenido @HttpContext.Current.User.Identity.Name
+        </div>
+        <hr />
+        <div id="encabezado3">
+            <span style="font-size:22px;cursor:pointer" onclick="openNav()">&#9776; MENÚ</span>
+        </div>
+    </div>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        @Html.ActionLink("Inicio", "Profile", "Home")
+        @Html.ActionLink("Registro", "RegistrarPersona", "Home")
+        @Html.ActionLink("Actualizar", "ActualizarPersona", "Home")
+        @Html.ActionLink("Eliminar", "EliminarPersona", "Home")
+        @Html.ActionLink("Reportes", "ReportesPersona", "Home")
+        @using (Html.BeginForm("Logout", "Home", FormMethod.Post))
+        {
+            <a href="javascript:;" onclick="document.forms[0].submit();">Salir</a>
+        }
+    </div>
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - VistasParciales</p>
+        </footer>
+    </div>
+
+    <script>
+        function openNav() { /*Al abrir el menú lateral*/
+            document.getElementById("mySidenav").style.width = "250px";
+            document.getElementById("about").style.marginLeft = "250px";
+            document.body.style.backgroundColor = "rgba(39, 55, 70, 0.8)";
+        }
+
+        function closeNav() { /*Al cerrar el menú lateral*/
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("about").style.marginLeft = "0";
+            document.body.style.backgroundColor = "rgba(46, 64, 83, 1)";
+        }
+    </script>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</body>
+</html>
